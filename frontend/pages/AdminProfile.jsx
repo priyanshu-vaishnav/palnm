@@ -92,7 +92,7 @@ export default function AdminProfile() {
             <Field label="Designation / Title" field="title" />
             <Field label="Rank" field="rank" hint="e.g. Diamond Leader" />
             <Field label="Company ka Naam" field="company" />
-            <Field label="Location" field="location" hint="e.g. Raipur, CG" />
+            <Field label="Location" field="location" hint="e.g. Greater Noida, UP" />
             <Field label="Tagline" field="tagline" />
           </div>
         </div>

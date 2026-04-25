@@ -52,7 +52,7 @@ export default function Hero({ profile }) {
 
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }}
           style={{ color: '#A09880', fontSize: '0.9rem', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '0.8rem' }}>
-          {profile?.title || 'AI Automation Specialist'} &nbsp;|&nbsp; {profile?.location || 'Raipur, CG'}
+          {profile?.title || 'AI Automation Specialist'} &nbsp;|&nbsp; {profile?.location || 'Greater Noida, UP'}
         </motion.p>
 
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }}
