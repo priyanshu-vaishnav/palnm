@@ -40,7 +40,7 @@ export default function Contact({ profile }) {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div>
-                <label>Aapka Naam *</label>
+                <label>Manju Pal *</label>
                 <input value={form.name} onChange={e => setForm({...form, name: e.target.value})} placeholder="Poora naam likhein" />
               </div>
               <div>
