@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
 const profileSchema = new mongoose.Schema({
-  name: { type: String, required: true, default: 'Aapka Naam' },
+  name: { type: String, required: true, default: 'Manju Pal' },
   title: { type: String, default: 'AI Automation Specialist' },
   tagline: { type: String, default: 'Skills Seekho, Zindagi Badlo — Apni Bhi, Doosron Ki Bhi' },
   company: { type: String, default: 'RiseNova Skill Services' },
-  location: { type: String, default: 'Raipur, Chhattisgarh' },
+  location: { type: String, default: 'Greater Noida, UP' },
   phone: { type: String, default: '' },
   email: { type: String, default: '' },
   whatsapp: { type: String, default: '' },
@@ -18,7 +18,7 @@ const profileSchema = new mongoose.Schema({
   monthlyIncome: { type: String, default: '₹40,000–50,000' },
   totalEarnings: { type: String, default: '₹10 Lakh+' },
   story: { type: String, default: '' },
-  personalQuote: { type: String, default: 'Skills hi asli asset hain — jo koi cheen nahi sakta.' },
+  personalQuote: { type: String, default: 'Skills hi asli Taakat hain — jo koi cheen nahi sakta.' },
   socialLinks: {
     instagram: { type: String, default: '' },
     facebook: { type: String, default: '' },
