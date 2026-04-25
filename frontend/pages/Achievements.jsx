@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
+import HeroCarousel from "./HeroCarousal";
 const defaultAchievements = [
   { icon: '🎯', value: 'Supervisor', title: 'Current Rank', description: 'RiseNova Skill Services mein Supervisor level achieve kiya' },
   { icon: '👥', value: '30+', title: 'Team Members', description: '10 direct + 20+ downline — poori team active hai' },
@@ -14,8 +14,14 @@ export default function Achievements({ achievements }) {
   const data = achievements?.length > 0 ? achievements : defaultAchievements;
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  return (
-    <section id="achievements" style={{ background: '#12121A', padding: '6rem 1.5rem' }}>
+  
+return (
+    <>
+      <HeroCarousel />
+
+      <section id="achievements" style={{ background: '#12121A', padding: '6rem 1.5rem' }}>
+        <div className="container">
+         <section id="achievements" style={{ background: '#12121A', padding: '6rem 1.5rem' }}>
       <div className="container">
         <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <p className="section-label">Numbers Jo Bolte Hain</p>
@@ -44,5 +50,10 @@ export default function Achievements({ achievements }) {
         </div>
       </div>
     </section>
+        </div>
+      </section>
+    </>
   );
 }
+  
+
