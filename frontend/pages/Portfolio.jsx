@@ -9,15 +9,35 @@ import Opportunity from '../Opportunity';
 import Contact from '../Contact';
 import Footer from '../Footer';
 
+// Production-safe API base URL
+const API = import.meta.env.VITE_API_URL || '';
+
 export default function Portfolio() {
   const [profile, setProfile] = useState(null);
   const [achievements, setAchievements] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/profile').then(r => setProfile(r.data)).catch(() => {});
-    axios.get('/api/achievements').then(r => setAchievements(r.data)).catch(() => {});
-    axios.get('/api/testimonials').then(r => setTestimonials(r.data)).catch(() => {});
+    // Profile
+    axios.get(`${API}/api/profile`)
+      .then(r => { if (r.data && typeof r.data === 'object') setProfile(r.data); })
+      .catch(() => {});
+
+    // Achievements — ensure array
+    axios.get(`${API}/api/achievements`)
+      .then(r => {
+        const data = r.data;
+        setAchievements(Array.isArray(data) ? data : []);
+      })
+      .catch(() => setAchievements([]));
+
+    // Testimonials — ensure array
+    axios.get(`${API}/api/testimonials`)
+      .then(r => {
+        const data = r.data;
+        setTestimonials(Array.isArray(data) ? data : []);
+      })
+      .catch(() => setTestimonials([]));
   }, []);
 
   return (
